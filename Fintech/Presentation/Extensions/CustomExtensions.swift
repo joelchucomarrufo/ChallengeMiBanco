@@ -6,3 +6,21 @@
 //
 
 import Foundation
+import SwiftUI
+
+extension Text {
+    
+    func applyStyleDescription() -> some View {
+        self.font(.custom("MuseoSans-500", size: 14))
+    }
+    
+}
+
+
+extension View {
+    
+    func hideKeyboard() {
+       UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+    }
+    
+}

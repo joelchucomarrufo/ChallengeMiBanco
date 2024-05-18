@@ -8,7 +8,7 @@
 import SwiftUI
 import SwiftData
 
-struct ContentView: View {
+struct HomeView: View {
         
     @Environment(\.colorScheme) var colorScheme
     @State private var amountSale = "S/ 3.7895"
@@ -66,77 +66,56 @@ struct ContentView: View {
                         secondText: $currencyYouReceive)
                     .padding(.top, 24)
                 }
-                
-                Spacer()
-                
+                                
+                Button(action: {
+                    
+                }) {
+                    Image(systemName: "arrow.up.arrow.down.circle.fill")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 56, height: 56)
+                        .padding()
+                        .background(Color.clear)
+                        .foregroundColor(Color("TextSubTitle"))
+                        .cornerRadius(8)
+                }
+                .buttonStyle(PlainButtonStyle())
                 
                 
             }
             .padding(.top, 24)
             
+            Button(action: {
+                
+            }) {
+                Text("title-button-operation")
+                    .font(.custom("Brevia-Semibold", size: 16))
+                    .padding()
+                    .frame(maxWidth: .infinity, minHeight: 48, maxHeight: 48)
+                    .background(Color("BackgroundButtonPrimary"))
+                    .foregroundColor(.white)
+                    .cornerRadius(10)
+            }
+            .padding(.top, 24)
+            
+            Text("title-record")
+                .font(.custom("Brevia-Semibold", size: 16))
+                .foregroundStyle(Color("TextSubTitle"))
+                .padding(.top, 24)
+            
             Spacer()
         }
         .padding([.leading, .trailing], 24)
+        .background(
+            Color("Background")
+                .onTapGesture {
+                    hideKeyboard()
+                }
+        )
     }
-    
 }
 
 
 #Preview {
-    ContentView()
+    HomeView()
 }
-
-
-/*
-struct ContentView: View {
-    @Environment(\.modelContext) private var modelContext
-    @Query private var items: [Item]
-
-    var body: some View {
-        NavigationSplitView {
-            List {
-                ForEach(items) { item in
-                    NavigationLink {
-                        Text("Item at \(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))")
-                    } label: {
-                        Text(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))
-                    }
-                }
-                .onDelete(perform: deleteItems)
-            }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
-                }
-                ToolbarItem {
-                    Button(action: addItem) {
-                        Label("Add Item", systemImage: "plus")
-                    }
-                }
-            }
-        } detail: {
-            Text("Select an item")
-        }
-    }
-
-    private func addItem() {
-        withAnimation {
-            let newItem = Item(timestamp: Date())
-            modelContext.insert(newItem)
-        }
-    }
-
-    private func deleteItems(offsets: IndexSet) {
-        withAnimation {
-            for index in offsets {
-                modelContext.delete(items[index])
-            }
-        }
-    }
-}
-
-#Preview {
-    ContentView()
-        .modelContainer(for: Item.self, inMemory: true)
-}
-*/

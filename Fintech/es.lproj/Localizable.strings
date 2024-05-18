@@ -6,9 +6,11 @@
   
 */
 
-"title-currency-exchange" = "Exchange your dollars and soles instantly";
-"title-sale %@" = "Sale %@";
-"title-purchase %@" = "Purchase %@";
-"title-have" = "Have";
-"title-receive" = "You receive";
-"title-record" = "Record";
+"title-currency-exchange" = "Cambia tus dólares y soles al instante";
+"title-sale %@" = "Venta %@";
+"title-purchase %@" = "Compra %@";
+"title-have" = "Tienes";
+"title-receive" = "Recibes";
+"title-record" = "Historial";
+"hint-amount" = "0,000.00";
+"title-button-operation" = "Realizar Cambio";
