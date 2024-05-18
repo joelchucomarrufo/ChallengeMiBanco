@@ -7,6 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E57C37DE2BF867A600576631 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57C37DD2BF867A600576631 /* HomeViewModel.swift */; };
+		E57C37E22BF86DB500576631 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57C37E12BF86DB500576631 /* SessionManager.swift */; };
+		E57C37E52BF86E4100576631 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57C37E42BF86E4100576631 /* NetworkManager.swift */; };
+		E57C37E82BF86EEC00576631 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = E57C37E72BF86EEC00576631 /* Alamofire */; };
+		E57C37EB2BF86F3700576631 /* OpenCombine in Frameworks */ = {isa = PBXBuildFile; productRef = E57C37EA2BF86F3700576631 /* OpenCombine */; };
+		E57C37ED2BF86F3700576631 /* OpenCombineDispatch in Frameworks */ = {isa = PBXBuildFile; productRef = E57C37EC2BF86F3700576631 /* OpenCombineDispatch */; };
+		E57C37EF2BF86F3700576631 /* OpenCombineFoundation in Frameworks */ = {isa = PBXBuildFile; productRef = E57C37EE2BF86F3700576631 /* OpenCombineFoundation */; };
+		E57C37F12BF86FF000576631 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57C37F02BF86FF000576631 /* NetworkRequest.swift */; };
+		E57C37F32BF8700E00576631 /* NetworkingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57C37F22BF8700E00576631 /* NetworkingError.swift */; };
+		E57C37F72BF870DE00576631 /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57C37F62BF870DE00576631 /* ErrorResponse.swift */; };
+		E57C37FB2BF8755700576631 /* CurrencyListRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57C37FA2BF8755700576631 /* CurrencyListRequest.swift */; };
+		E57C37FE2BF87A4100576631 /* CurrencyListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57C37FD2BF87A4100576631 /* CurrencyListModel.swift */; };
+		E57C38012BF87D8000576631 /* CurrencyListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57C38002BF87D8000576631 /* CurrencyListInteractor.swift */; };
+		E57C38042BF87DF700576631 /* Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57C38032BF87DF700576631 /* Base.swift */; };
+		E57C38062BF87F0300576631 /* CurrencyListProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57C38052BF87F0300576631 /* CurrencyListProvider.swift */; };
+		E57C38082BF8804F00576631 /* CurrencyListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57C38072BF8804F00576631 /* CurrencyListCoordinator.swift */; };
+		E57C380A2BF880C000576631 /* CurrencyListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57C38092BF880C000576631 /* CurrencyListPresenter.swift */; };
+		E57C380C2BF883A800576631 /* CurrencyListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57C380B2BF883A800576631 /* CurrencyListResponse.swift */; };
+		E57C380F2BF888B800576631 /* CurrencyListUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57C380E2BF888B800576631 /* CurrencyListUseCase.swift */; };
+		E57C38122BF88B0A00576631 /* LoadingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57C38112BF88B0A00576631 /* LoadingScreen.swift */; };
+		E57C38142BF88B1E00576631 /* LoadingCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57C38132BF88B1E00576631 /* LoadingCircleView.swift */; };
 		E5ECC6E12BF8331A00590BA9 /* FintechApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5ECC6E02BF8331A00590BA9 /* FintechApp.swift */; };
 		E5ECC6E32BF8331A00590BA9 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5ECC6E22BF8331A00590BA9 /* HomeView.swift */; };
 		E5ECC6E52BF8331A00590BA9 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5ECC6E42BF8331A00590BA9 /* Item.swift */; };
@@ -40,6 +61,23 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E57C37DD2BF867A600576631 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		E57C37E12BF86DB500576631 /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
+		E57C37E42BF86E4100576631 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		E57C37F02BF86FF000576631 /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
+		E57C37F22BF8700E00576631 /* NetworkingError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingError.swift; sourceTree = "<group>"; };
+		E57C37F62BF870DE00576631 /* ErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResponse.swift; sourceTree = "<group>"; };
+		E57C37FA2BF8755700576631 /* CurrencyListRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyListRequest.swift; sourceTree = "<group>"; };
+		E57C37FD2BF87A4100576631 /* CurrencyListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyListModel.swift; sourceTree = "<group>"; };
+		E57C38002BF87D8000576631 /* CurrencyListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyListInteractor.swift; sourceTree = "<group>"; };
+		E57C38032BF87DF700576631 /* Base.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Base.swift; sourceTree = "<group>"; };
+		E57C38052BF87F0300576631 /* CurrencyListProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyListProvider.swift; sourceTree = "<group>"; };
+		E57C38072BF8804F00576631 /* CurrencyListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyListCoordinator.swift; sourceTree = "<group>"; };
+		E57C38092BF880C000576631 /* CurrencyListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyListPresenter.swift; sourceTree = "<group>"; };
+		E57C380B2BF883A800576631 /* CurrencyListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyListResponse.swift; sourceTree = "<group>"; };
+		E57C380E2BF888B800576631 /* CurrencyListUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyListUseCase.swift; sourceTree = "<group>"; };
+		E57C38112BF88B0A00576631 /* LoadingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingScreen.swift; sourceTree = "<group>"; };
+		E57C38132BF88B1E00576631 /* LoadingCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingCircleView.swift; sourceTree = "<group>"; };
 		E5ECC6DD2BF8331A00590BA9 /* Fintech.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fintech.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5ECC6E02BF8331A00590BA9 /* FintechApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FintechApp.swift; sourceTree = "<group>"; };
 		E5ECC6E22BF8331A00590BA9 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -66,6 +104,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E57C37EB2BF86F3700576631 /* OpenCombine in Frameworks */,
+				E57C37ED2BF86F3700576631 /* OpenCombineDispatch in Frameworks */,
+				E57C37E82BF86EEC00576631 /* Alamofire in Frameworks */,
+				E57C37EF2BF86F3700576631 /* OpenCombineFoundation in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,6 +128,122 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E57C37DC2BF8679600576631 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				E5ECC6E22BF8331A00590BA9 /* HomeView.swift */,
+				E57C37DD2BF867A600576631 /* HomeViewModel.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		E57C37DF2BF86DA000576631 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				E57C37E32BF86E2800576631 /* Network */,
+				E57C37E02BF86DA900576631 /* Session */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		E57C37E02BF86DA900576631 /* Session */ = {
+			isa = PBXGroup;
+			children = (
+				E57C37E12BF86DB500576631 /* SessionManager.swift */,
+			);
+			path = Session;
+			sourceTree = "<group>";
+		};
+		E57C37E32BF86E2800576631 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				E57C37E42BF86E4100576631 /* NetworkManager.swift */,
+				E57C37F02BF86FF000576631 /* NetworkRequest.swift */,
+				E57C37F22BF8700E00576631 /* NetworkingError.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		E57C37F42BF870BE00576631 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				E57C37F52BF870C300576631 /* Cloud */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		E57C37F52BF870C300576631 /* Cloud */ = {
+			isa = PBXGroup;
+			children = (
+				E57C37F92BF8753600576631 /* Request */,
+				E57C37F82BF8752D00576631 /* Response */,
+			);
+			path = Cloud;
+			sourceTree = "<group>";
+		};
+		E57C37F82BF8752D00576631 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				E57C37F62BF870DE00576631 /* ErrorResponse.swift */,
+				E57C380B2BF883A800576631 /* CurrencyListResponse.swift */,
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
+		E57C37F92BF8753600576631 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				E57C37FC2BF879EB00576631 /* Model */,
+				E57C37FA2BF8755700576631 /* CurrencyListRequest.swift */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		E57C37FC2BF879EB00576631 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E57C37FD2BF87A4100576631 /* CurrencyListModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E57C37FF2BF87D6D00576631 /* Feature */ = {
+			isa = PBXGroup;
+			children = (
+				E57C38022BF87DEA00576631 /* CurrencyList */,
+				E57C38032BF87DF700576631 /* Base.swift */,
+			);
+			path = Feature;
+			sourceTree = "<group>";
+		};
+		E57C38022BF87DEA00576631 /* CurrencyList */ = {
+			isa = PBXGroup;
+			children = (
+				E57C38002BF87D8000576631 /* CurrencyListInteractor.swift */,
+				E57C38052BF87F0300576631 /* CurrencyListProvider.swift */,
+				E57C38072BF8804F00576631 /* CurrencyListCoordinator.swift */,
+				E57C38092BF880C000576631 /* CurrencyListPresenter.swift */,
+			);
+			path = CurrencyList;
+			sourceTree = "<group>";
+		};
+		E57C380D2BF888A600576631 /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+				E57C380E2BF888B800576631 /* CurrencyListUseCase.swift */,
+			);
+			path = UseCase;
+			sourceTree = "<group>";
+		};
+		E57C38102BF88AFE00576631 /* Loading */ = {
+			isa = PBXGroup;
+			children = (
+				E57C38112BF88B0A00576631 /* LoadingScreen.swift */,
+				E57C38132BF88B1E00576631 /* LoadingCircleView.swift */,
+			);
+			path = Loading;
+			sourceTree = "<group>";
+		};
 		E5ECC6D42BF8331A00590BA9 = {
 			isa = PBXGroup;
 			children = (
@@ -170,6 +328,10 @@
 		E5ECC7152BF83E5800590BA9 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				E57C380D2BF888A600576631 /* UseCase */,
+				E57C37FF2BF87D6D00576631 /* Feature */,
+				E57C37F42BF870BE00576631 /* Data */,
+				E57C37DF2BF86DA000576631 /* Manager */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -185,7 +347,8 @@
 		E5ECC7202BF84D0000590BA9 /* Features */ = {
 			isa = PBXGroup;
 			children = (
-				E5ECC6E22BF8331A00590BA9 /* HomeView.swift */,
+				E57C38102BF88AFE00576631 /* Loading */,
+				E57C37DC2BF8679600576631 /* Home */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -214,6 +377,12 @@
 			dependencies = (
 			);
 			name = Fintech;
+			packageProductDependencies = (
+				E57C37E72BF86EEC00576631 /* Alamofire */,
+				E57C37EA2BF86F3700576631 /* OpenCombine */,
+				E57C37EC2BF86F3700576631 /* OpenCombineDispatch */,
+				E57C37EE2BF86F3700576631 /* OpenCombineFoundation */,
+			);
 			productName = Fintech;
 			productReference = E5ECC6DD2BF8331A00590BA9 /* Fintech.app */;
 			productType = "com.apple.product-type.application";
@@ -287,6 +456,10 @@
 				es,
 			);
 			mainGroup = E5ECC6D42BF8331A00590BA9;
+			packageReferences = (
+				E57C37E62BF86EEC00576631 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				E57C37E92BF86F3700576631 /* XCRemoteSwiftPackageReference "OpenCombine" */,
+			);
 			productRefGroup = E5ECC6DE2BF8331A00590BA9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -332,11 +505,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E57C380C2BF883A800576631 /* CurrencyListResponse.swift in Sources */,
 				E5ECC6E32BF8331A00590BA9 /* HomeView.swift in Sources */,
+				E57C37DE2BF867A600576631 /* HomeViewModel.swift in Sources */,
 				E5ECC6E52BF8331A00590BA9 /* Item.swift in Sources */,
 				E5ECC72A2BF8532D00590BA9 /* CustomExtensions.swift in Sources */,
+				E57C37F32BF8700E00576631 /* NetworkingError.swift in Sources */,
+				E57C37E52BF86E4100576631 /* NetworkManager.swift in Sources */,
+				E57C38142BF88B1E00576631 /* LoadingCircleView.swift in Sources */,
 				E5ECC6E12BF8331A00590BA9 /* FintechApp.swift in Sources */,
+				E57C38122BF88B0A00576631 /* LoadingScreen.swift in Sources */,
+				E57C380A2BF880C000576631 /* CurrencyListPresenter.swift in Sources */,
+				E57C38062BF87F0300576631 /* CurrencyListProvider.swift in Sources */,
 				E5ECC7222BF84D2000590BA9 /* FintechTextField.swift in Sources */,
+				E57C37FB2BF8755700576631 /* CurrencyListRequest.swift in Sources */,
+				E57C38082BF8804F00576631 /* CurrencyListCoordinator.swift in Sources */,
+				E57C37F72BF870DE00576631 /* ErrorResponse.swift in Sources */,
+				E57C37F12BF86FF000576631 /* NetworkRequest.swift in Sources */,
+				E57C37E22BF86DB500576631 /* SessionManager.swift in Sources */,
+				E57C380F2BF888B800576631 /* CurrencyListUseCase.swift in Sources */,
+				E57C38042BF87DF700576631 /* Base.swift in Sources */,
+				E57C37FE2BF87A4100576631 /* CurrencyListModel.swift in Sources */,
+				E57C38012BF87D8000576631 /* CurrencyListInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -504,8 +694,10 @@
 		E5ECC7052BF8331C00590BA9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				API_KEY = 6f69b77dcf2672ef31f3f2c69f4c4029b7b0fe4a;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				BASE_URL = "https://api.getgeoapi.com/v2";
 				CODE_SIGN_ENTITLEMENTS = Fintech/Fintech.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -543,8 +735,10 @@
 		E5ECC7062BF8331C00590BA9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				API_KEY = 6f69b77dcf2672ef31f3f2c69f4c4029b7b0fe4a;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				BASE_URL = "https://api.getgeoapi.com/v2";
 				CODE_SIGN_ENTITLEMENTS = Fintech/Fintech.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -709,6 +903,48 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E57C37E62BF86EEC00576631 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.9.1;
+			};
+		};
+		E57C37E92BF86F3700576631 /* XCRemoteSwiftPackageReference "OpenCombine" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/OpenCombine/OpenCombine.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.14.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E57C37E72BF86EEC00576631 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E57C37E62BF86EEC00576631 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		E57C37EA2BF86F3700576631 /* OpenCombine */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E57C37E92BF86F3700576631 /* XCRemoteSwiftPackageReference "OpenCombine" */;
+			productName = OpenCombine;
+		};
+		E57C37EC2BF86F3700576631 /* OpenCombineDispatch */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E57C37E92BF86F3700576631 /* XCRemoteSwiftPackageReference "OpenCombine" */;
+			productName = OpenCombineDispatch;
+		};
+		E57C37EE2BF86F3700576631 /* OpenCombineFoundation */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E57C37E92BF86F3700576631 /* XCRemoteSwiftPackageReference "OpenCombine" */;
+			productName = OpenCombineFoundation;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E5ECC6D52BF8331A00590BA9 /* Project object */;
 }
