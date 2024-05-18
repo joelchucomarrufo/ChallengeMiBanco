@@ -1,0 +1,14 @@
+/* 
+  Localizable.strings
+  Fintech
+
+  Created by Joel Martin Chuco Marrufo on 17/05/24.
+  
+*/
+
+"title-currency-exchange" = "Exchange your dollars and soles instantly";
+"title-sale %@" = "Sale %@";
+"title-purchase %@" = "Purchase %@";
+"title-have" = "Have";
+"title-receive" = "You receive";
+"title-record" = "Record";
