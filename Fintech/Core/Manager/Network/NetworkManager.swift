@@ -34,7 +34,9 @@ class NetworkManager: NetworkManagerProtocol {
         if request.httpMethod == .delete { method = .delete }
                 
         let headers = HTTPHeaders(request.httpHeaders)
-        print(request.httpMethod, request.endpoint)
+#if DEBUG
+            print(request.httpMethod, request.endpoint)
+#endif
         return session.request(request.endpoint, method: method, encoding: URLEncoding.default, headers: headers)
             .validate()
             .publishData()
@@ -44,6 +46,9 @@ class NetworkManager: NetworkManagerProtocol {
                 }
                 if (200...299).contains(httpResponse.statusCode) {
                     let value = try JSONDecoder().decode(T.self, from: response.data ?? Data())
+#if DEBUG
+                    print("Response: ", value)
+#endif
                     return value
                 } else if (400...499).contains(httpResponse.statusCode) {
                     let errorResponse = try JSONDecoder().decode(ErrorResponse.self, from: response.data ?? Data())

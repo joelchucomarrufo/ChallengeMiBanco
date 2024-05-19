@@ -13,13 +13,15 @@ struct HomeView: View {
     @ObservedObject var homeViewModel = HomeViewModel.shared
 
     @Environment(\.colorScheme) var colorScheme
-    @State private var amountSale = "S/ 3.7895"
-    @State private var amountPurchase = "S/ 3.7895"
-    @State private var amountHave = ""
-    @State private var amountYouReceive = ""
-    @State private var currencyHave = "Nuevos Sol"
-    @State private var currencyYouReceive = "Dólares"
+    
+    @State private var showCurrencyPicker = false
+    @State private var activeTextField: ActiveTextField? = nil
 
+    enum ActiveTextField {
+        case currencyHave
+        case currencyYouReceive
+    }
+    
     var body: some View {
         ZStack {
             VStack(alignment: .leading) {
@@ -40,13 +42,13 @@ struct HomeView: View {
                 .padding(.top, 24)
 
                 HStack(alignment: .center) {
-                    Text("title-sale \(amountSale)")
+                    Text("title-sale \(homeViewModel.amountSale)")
                         .foregroundStyle(Color("TextSubTitle"))
                         .applyStyleDescription()
 
                     Spacer()
 
-                    Text("title-purchase \(amountPurchase)")
+                    Text("title-purchase \(homeViewModel.amountPurchase)")
                         .foregroundStyle(Color("TextDescription"))
                         .applyStyleDescription()
                 }
@@ -57,19 +59,38 @@ struct HomeView: View {
                         FintechTextField(
                             title: LocalizedStringKey("title-have"),
                             hint: LocalizedStringKey("hint-amount"),
-                            text: $amountHave,
-                            secondText: $currencyHave)
+                            text: $homeViewModel.amountHave,
+                            secondText: $homeViewModel.currencyHave,
+                            onSecondTextTapped: {
+                                activeTextField = .currencyHave
+                                showCurrencyPicker = true
+                            },
+                            isDisabled: .constant(false),
+                            onFinishEditing: {
+                                homeViewModel.requestCurrencyConvert()
+                            })
 
                         FintechTextField(
                             title: LocalizedStringKey("title-receive"),
                             hint: LocalizedStringKey("hint-amount"),
-                            text: $amountYouReceive,
-                            secondText: $currencyYouReceive)
+                            text: $homeViewModel.amountYouReceive,
+                            secondText: $homeViewModel.currencyYouReceive,
+                            onSecondTextTapped: {
+                                activeTextField = .currencyYouReceive
+                                showCurrencyPicker = true
+                            },
+                            isDisabled: .constant(true),
+                            onFinishEditing: {
+                            })
                         .padding(.top, 24)
                     }
 
                     Button(action: {
-
+                        let codeTemp = homeViewModel.currencyYouReceive
+                        homeViewModel.currencyYouReceive = homeViewModel.currencyHave
+                        homeViewModel.currencyHave = codeTemp
+                        homeViewModel.requestCurrencyRate()
+                        homeViewModel.requestCurrencyConvert()
                     }) {
                         Image(systemName: "arrow.up.arrow.down.circle.fill")
                             .resizable()
@@ -114,7 +135,38 @@ struct HomeView: View {
             .onAppear {
                 homeViewModel.requestCurrencyList()
             }
-
+            
+            if showCurrencyPicker {
+                GeometryReader { geometry in
+                    VStack {
+                        Spacer()
+                        FintechPicker(
+                            title: LocalizedStringKey("title-picker-currency"),
+                            currencies: homeViewModel.currencyList,
+                            showCurrencyPicker: $showCurrencyPicker,
+                            activeTextField: $activeTextField,
+                            currencyHave: $homeViewModel.currencyHave,
+                            currencyYouReceive: $homeViewModel.currencyYouReceive,
+                            onTapped: {
+                                homeViewModel.requestCurrencyRate()
+                                homeViewModel.requestCurrencyConvert()
+                            }
+                        )
+                        .frame(width: geometry.size.width, height: geometry.size.height / 1.8)
+                        .background(Color(UIColor.systemBackground))
+                        .cornerRadius(20)
+                        .shadow(radius: 10)
+                        .transition(.move(edge: .bottom))
+                        .animation(.easeInOut, value: showCurrencyPicker)
+                    }
+                    .background(Color.black.opacity(0.3).edgesIgnoringSafeArea(.all))
+                    .onTapGesture {
+                        withAnimation(.easeInOut) {
+                            showCurrencyPicker = false
+                        }
+                    }
+                }
+            }
             if homeViewModel.isLoading {
                 LoadingScreen()
                     .edgesIgnoringSafeArea(.all)

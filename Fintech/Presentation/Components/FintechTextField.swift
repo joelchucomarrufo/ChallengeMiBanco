@@ -12,10 +12,13 @@ struct FintechTextField: View {
     
     var title: LocalizedStringKey
     var hint: LocalizedStringKey
-    var keyboardType : UIKeyboardType = .numbersAndPunctuation
+    var keyboardType : UIKeyboardType = .numberPad
     @FocusState private var isFocused: Bool
     @Binding var text: String
     @Binding var secondText: String
+    var onSecondTextTapped: () -> Void
+    @Binding var isDisabled: Bool
+    var onFinishEditing: () -> Void
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -30,19 +33,35 @@ struct FintechTextField: View {
                     .background(RoundedRectangle(cornerRadius: 10).fill(Color("TextFieldBackground")).padding(2))
                 
                 HStack {
-                    TextField(hint, text: $text)
-                        .multilineTextAlignment(.trailing)
-                        .keyboardType(keyboardType)
-                        .font(.custom("MuseoSans-500", size: 16))
-                        .padding([.top, .bottom], 8)
-                        .padding([.leading, .trailing], 12)
-                        .background(Color.clear)
-                        .focused($isFocused)
+                    TextField(hint, text: $text, onEditingChanged: { editing in
+                        if !editing {
+                            DispatchQueue.main.async {
+                                text = text.formattedAmount()
+                                onFinishEditing()
+                            }
+                        }
+                    })
+                    .multilineTextAlignment(.trailing)
+                    .keyboardType(keyboardType)
+                    .font(.custom("MuseoSans-500", size: 16))
+                    .padding([.top, .bottom], 8)
+                    .padding([.leading, .trailing], 12)
+                    .background(Color.clear)
+                    .focused($isFocused)
+                    .disabled(isDisabled)
+                    .onChange(of: text) { _ in
+                        if text.count > 12 {
+                            text = String(text.prefix(12))
+                        }
+                    }
                     
                     Text(secondText)
-                        .font(.custom("MuseoSans-500", size: 16))
+                        .font(.custom("Brevia-Semibold", size: 16))
                         .foregroundStyle(Color("TextDescription"))
                         .padding(.trailing, 12)
+                        .onTapGesture {
+                            onSecondTextTapped()
+                        }
                 }
             }
             .frame(height: 40)
@@ -56,5 +75,5 @@ struct FintechTextField: View {
             return Color("BorderTextUnfocus")
         }
     }
-    
+        
 }
