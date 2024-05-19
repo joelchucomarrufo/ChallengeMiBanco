@@ -17,5 +17,6 @@
 "title-picker-currency" = "Select a Currency";
 "title-you-sent" = "You sent";
 "title-did-you-receive" = "Dis you receive";
-"title-validation-enter-amount" = "You must enter an amount greater than 0 to make a transaction";
+"message-validation-enter-amount" = "You must enter an amount greater than 0 to make a transaction";
 "title-button-accept" = "Accept";
+"message-register-transaction" = "Transaction registered successfully";

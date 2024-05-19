@@ -11,16 +11,17 @@ import SwiftUI
 struct AlertDialogScreen: View {
     
     @Binding var isVisible: Bool
+    @Binding var isError: Bool
     var message: String
     
     var body: some View {
         VStack {
             Spacer()
             VStack {
-                Image(systemName: "multiply.circle.fill")
+                Image(systemName: isError ? "multiply.circle.fill" : "checkmark.circle.fill")
                     .resizable()
                     .scaledToFit()
-                    .foregroundColor(.red)
+                    .foregroundColor(isError ? .red : .green)
                     .frame(width: 48, height: 48)
                     .padding(.top, 24)
                 
@@ -61,6 +62,6 @@ struct AlertDialogScreen: View {
 
 #Preview {
     VStack{
-        AlertDialogScreen(isVisible: .constant(true), message: NSLocalizedString("title-validation-enter-amount", comment: ""))
+        AlertDialogScreen(isVisible: .constant(true), isError: .constant(true), message: NSLocalizedString("message-validation-enter-amount", comment: ""))
     }
 }

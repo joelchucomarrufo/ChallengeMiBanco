@@ -23,14 +23,17 @@ class HomeViewModel: ObservableObject{
     
     @Published var isLoading = false
     @Published var showMessage = false
-    @Published var isSuccess = false
-    @Published var errorMessage = ""
-    private var rateSelect = ""
+    @Published var isError = false
+    @Published var message = ""
+    var rateSelect = ""
         
-    let currencyListUseCase = CurrencyListUseCase()
-    let currencyConvertUseCase = CurrencyConvertUseCase()
+    var currencyListUseCase = CurrencyListUseCase()
+    var currencyConvertUseCase = CurrencyConvertUseCase()
         
-    init() {
+    init(currencyListUseCase: CurrencyListUseCase = CurrencyListUseCase(), currencyConvertUseCase: CurrencyConvertUseCase = CurrencyConvertUseCase()) {
+        self.currencyListUseCase = currencyListUseCase
+        self.currencyConvertUseCase = currencyConvertUseCase
+        
         currencyListUseCase.eventDelegate = self
         currencyConvertUseCase.eventDelegate = self
     }
@@ -64,6 +67,10 @@ class HomeViewModel: ObservableObject{
                 currencyCodeYouReceive: currencyYouReceive,
                 rate: rateSelect)
             context.insert(newTransaction)
+            
+            self.message = NSLocalizedString("message-register-transaction", comment: "")
+            self.isError = false
+            self.showMessage = true
                              
             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                 self.amountSale = "S/ 0.00"
@@ -75,7 +82,8 @@ class HomeViewModel: ObservableObject{
                 self.requestCurrencyRate()
             }
         } else {
-            self.errorMessage = NSLocalizedString("title-validation-enter-amount", comment: "")
+            self.message = NSLocalizedString("message-validation-enter-amount", comment: "")
+            self.isError = true
             self.isLoading = false
             self.showMessage = true
         }
@@ -103,8 +111,9 @@ extension HomeViewModel : CurrencyListUseCaseDelegate{
     }
         
     func eventError(message: String) {
+        self.message = message
+        self.isError = true
         self.isLoading = false
-        self.errorMessage = message
         self.showMessage = true
     }
 }

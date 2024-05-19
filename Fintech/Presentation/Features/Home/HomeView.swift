@@ -178,7 +178,7 @@ struct HomeView: View {
             }
             
             if (homeViewModel.showMessage) {
-                AlertDialogScreen(isVisible: $homeViewModel.showMessage, message: homeViewModel.errorMessage)
+                AlertDialogScreen(isVisible: $homeViewModel.showMessage, isError: $homeViewModel.isError, message: homeViewModel.message)
             }
         }
     }

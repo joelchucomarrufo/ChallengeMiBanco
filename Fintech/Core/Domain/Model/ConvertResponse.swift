@@ -9,12 +9,12 @@ import Foundation
 
 public struct ConvertResponse: Codable {
     
-    let baseCurrencyCode: String
-    let baseCurrencyName: String
-    let amount: String
-    let currencyName: String
-    let rate: String
-    let rateForAmount: String
+    var baseCurrencyCode: String
+    var baseCurrencyName: String
+    var amount: String
+    var currencyName: String
+    var rate: String
+    var rateForAmount: String
     
     public init() {
         self.baseCurrencyCode = ""
