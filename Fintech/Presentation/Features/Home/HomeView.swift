@@ -176,6 +176,10 @@ struct HomeView: View {
                 LoadingScreen()
                     .edgesIgnoringSafeArea(.all)
             }
+            
+            if (homeViewModel.showMessage) {
+                AlertDialogScreen(isVisible: $homeViewModel.showMessage, message: homeViewModel.errorMessage)
+            }
         }
     }
 }

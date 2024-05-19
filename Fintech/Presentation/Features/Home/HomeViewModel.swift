@@ -55,23 +55,39 @@ class HomeViewModel: ObservableObject{
     
     func saveTransaction(context: ModelContext) {
         self.isLoading = true
-        let newTransaction = Transaction(
-            dateTime: Date(),
-            haveAmount: amountHave,
-            currencyCodeHave: currencyHave,
-            youReceiveAmount: amountYouReceive,
-            currencyCodeYouReceive: currencyYouReceive,
-            rate: rateSelect)
-        context.insert(newTransaction)
-                         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            self.amountSale = "S/ 0.00"
-            self.amountPurchase = "S/ 0.00"
-            self.amountHave = ""
-            self.amountYouReceive = ""
-            self.currencyHave = "PEN"
-            self.currencyYouReceive = "USD"
-            self.requestCurrencyRate()
+        if (isValidField()) {
+            let newTransaction = Transaction(
+                dateTime: Date(),
+                haveAmount: amountHave,
+                currencyCodeHave: currencyHave,
+                youReceiveAmount: amountYouReceive,
+                currencyCodeYouReceive: currencyYouReceive,
+                rate: rateSelect)
+            context.insert(newTransaction)
+                             
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                self.amountSale = "S/ 0.00"
+                self.amountPurchase = "S/ 0.00"
+                self.amountHave = ""
+                self.amountYouReceive = ""
+                self.currencyHave = "PEN"
+                self.currencyYouReceive = "USD"
+                self.requestCurrencyRate()
+            }
+        } else {
+            self.errorMessage = NSLocalizedString("title-validation-enter-amount", comment: "")
+            self.isLoading = false
+            self.showMessage = true
+        }
+        
+    }
+    
+    func isValidField() -> Bool {
+        if (!amountHave.isEmpty) {
+            let amountDecimal = Decimal(string: amountHave.replacingOccurrences(of: ",", with: "")) ?? 0.00
+            return (amountDecimal > 0.00)
+        } else {
+            return false
         }
     }
     

@@ -17,3 +17,5 @@
 "title-picker-currency" = "Seleccione una moneda";
 "title-you-sent" = "Enviaste";
 "title-did-you-receive" = "Recibiste";
+"title-validation-enter-amount" = "Debe de ingresar un monto mayor a 0 para realizar una transacción";
+"title-button-accept" = "Aceptar";

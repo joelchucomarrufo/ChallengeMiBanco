@@ -22,6 +22,7 @@
 		E516651A2BF9B19500CDA78B /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51665192BF9B19500CDA78B /* HistoryView.swift */; };
 		E516651F2BF9B4DC00CDA78B /* ScreenNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E516651E2BF9B4DC00CDA78B /* ScreenNavigation.swift */; };
 		E51665212BF9C2F000CDA78B /* FintechCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51665202BF9C2F000CDA78B /* FintechCard.swift */; };
+		E517CB782BFA55DD0062C211 /* AlertDialogScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E517CB772BFA55DD0062C211 /* AlertDialogScreen.swift */; };
 		E57C37DE2BF867A600576631 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57C37DD2BF867A600576631 /* HomeViewModel.swift */; };
 		E57C37E22BF86DB500576631 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57C37E12BF86DB500576631 /* SessionManager.swift */; };
 		E57C37E52BF86E4100576631 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57C37E42BF86E4100576631 /* NetworkManager.swift */; };
@@ -91,6 +92,7 @@
 		E51665192BF9B19500CDA78B /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
 		E516651E2BF9B4DC00CDA78B /* ScreenNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenNavigation.swift; sourceTree = "<group>"; };
 		E51665202BF9C2F000CDA78B /* FintechCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FintechCard.swift; sourceTree = "<group>"; };
+		E517CB772BFA55DD0062C211 /* AlertDialogScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertDialogScreen.swift; sourceTree = "<group>"; };
 		E57C37DD2BF867A600576631 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		E57C37E12BF86DB500576631 /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
 		E57C37E42BF86E4100576631 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
@@ -208,6 +210,14 @@
 				E516651E2BF9B4DC00CDA78B /* ScreenNavigation.swift */,
 			);
 			path = Navigation;
+			sourceTree = "<group>";
+		};
+		E517CB762BFA55D20062C211 /* AlertDialog */ = {
+			isa = PBXGroup;
+			children = (
+				E517CB772BFA55DD0062C211 /* AlertDialogScreen.swift */,
+			);
+			path = AlertDialog;
 			sourceTree = "<group>";
 		};
 		E57C37DC2BF8679600576631 /* Home */ = {
@@ -405,6 +415,7 @@
 		E5ECC7142BF83E4900590BA9 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				E517CB762BFA55D20062C211 /* AlertDialog */,
 				E516651D2BF9B4D200CDA78B /* Navigation */,
 				E5ECC7282BF8531B00590BA9 /* Extensions */,
 				E5ECC7202BF84D0000590BA9 /* Features */,
@@ -628,6 +639,7 @@
 				E57C380F2BF888B800576631 /* CurrencyListUseCase.swift in Sources */,
 				E51664FE2BF953A900CDA78B /* CurrencyConvertRequest.swift in Sources */,
 				E57C38042BF87DF700576631 /* Base.swift in Sources */,
+				E517CB782BFA55DD0062C211 /* AlertDialogScreen.swift in Sources */,
 				E51665092BF9578C00CDA78B /* CurrencyConvertPresenter.swift in Sources */,
 				E51665032BF9575400CDA78B /* CurrencyConvertInteractor.swift in Sources */,
 				E57C37FE2BF87A4100576631 /* CurrencyListModel.swift in Sources */,
