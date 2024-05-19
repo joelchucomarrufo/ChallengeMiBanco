@@ -13,6 +13,7 @@ struct HomeView: View {
     @ObservedObject var homeViewModel = HomeViewModel.shared
 
     @Environment(\.colorScheme) var colorScheme
+    @Environment(\.modelContext) private var modelContext
     
     @State private var showCurrencyPicker = false
     @State private var activeTextField: ActiveTextField? = nil
@@ -104,26 +105,30 @@ struct HomeView: View {
                     .buttonStyle(PlainButtonStyle())
                 }
                 .padding(.top, 24)
-
-                Button(action: {
-
-                }) {
-                    Text("title-button-operation")
-                        .font(.custom("Brevia-Semibold", size: 16))
-                        .padding()
-                        .frame(maxWidth: .infinity, minHeight: 48, maxHeight: 48)
-                        .background(Color("BackgroundButtonPrimary"))
-                        .foregroundColor(.white)
-                        .cornerRadius(10)
-                }
-                .padding(.top, 24)
-
-                Text("title-record")
-                    .font(.custom("Brevia-Semibold", size: 16))
-                    .foregroundStyle(Color("TextSubTitle"))
-                    .padding(.top, 24)
-
+                
                 Spacer()
+                
+                FintechButton(
+                    type: .primary,
+                    title: LocalizedStringKey("title-button-operation"),
+                    action: {
+                        hideKeyboard()
+                        homeViewModel.saveTransaction(context: modelContext)
+                    }
+                )
+                .padding(.top, 48)
+                
+                FintechButton(
+                    type: .secondary,
+                    title: LocalizedStringKey("title-record"),
+                    action: {
+                        hideKeyboard()
+                        ScreenNavigation().redirectToScreen(to: HistoryView().environment(\.modelContext, modelContext), direction: .fromRight)
+                    }
+                )
+                .padding(.top, 16)
+                .padding(.bottom, 48)
+                
             }
             .padding([.leading, .trailing], 24)
             .background(

@@ -7,10 +7,11 @@
 
 import Foundation
 import SwiftUI
+import SwiftData
 
 class HomeViewModel: ObservableObject{
     static let shared = HomeViewModel()
-        
+            
     @Published var currencyList: [String: String] = [:]
     
     @Published var amountSale = "S/ 0.00"
@@ -24,6 +25,7 @@ class HomeViewModel: ObservableObject{
     @Published var showMessage = false
     @Published var isSuccess = false
     @Published var errorMessage = ""
+    private var rateSelect = ""
         
     let currencyListUseCase = CurrencyListUseCase()
     let currencyConvertUseCase = CurrencyConvertUseCase()
@@ -49,6 +51,28 @@ class HomeViewModel: ObservableObject{
         isLoading = true
         let amountDecimal = Decimal(string: amountHave.replacingOccurrences(of: ",", with: "")) ?? 0.00
         currencyConvertUseCase.requestCurrencyConvert(convert: ConvertModel(from: currencyHave, to: currencyYouReceive, amount: amountDecimal))
+    }
+    
+    func saveTransaction(context: ModelContext) {
+        self.isLoading = true
+        let newTransaction = Transaction(
+            dateTime: Date(),
+            haveAmount: amountHave,
+            currencyCodeHave: currencyHave,
+            youReceiveAmount: amountYouReceive,
+            currencyCodeYouReceive: currencyYouReceive,
+            rate: rateSelect)
+        context.insert(newTransaction)
+                         
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            self.amountSale = "S/ 0.00"
+            self.amountPurchase = "S/ 0.00"
+            self.amountHave = ""
+            self.amountYouReceive = ""
+            self.currencyHave = "PEN"
+            self.currencyYouReceive = "USD"
+            self.requestCurrencyRate()
+        }
     }
     
 }
@@ -78,8 +102,9 @@ extension HomeViewModel : CurrencyConvertUseCaseDelegate {
     
     func eventSuccess(rate: String) {
         self.isLoading = false
-        amountSale = "\(currencyHave) \(String(describing: rate))"
-        amountPurchase = "\(currencyHave) \(String(describing: rate))"
+        self.rateSelect = String(describing: rate)
+        amountSale = "\(currencyHave) \(self.rateSelect)"
+        amountPurchase = "\(currencyHave) \(self.rateSelect)"
     }
         
 }

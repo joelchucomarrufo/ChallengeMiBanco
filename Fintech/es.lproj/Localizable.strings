@@ -15,3 +15,5 @@
 "hint-amount" = "0,000.00";
 "title-button-operation" = "Realizar Cambio";
 "title-picker-currency" = "Seleccione una moneda";
+"title-you-sent" = "Enviaste";
+"title-did-you-receive" = "Recibiste";
