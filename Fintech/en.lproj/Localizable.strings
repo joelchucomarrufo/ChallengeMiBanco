@@ -14,3 +14,9 @@
 "title-record" = "Record";
 "hint-amount" = "0,000.00";
 "title-button-operation" = "Make Change";
+"title-picker-currency" = "Select a Currency";
+"title-you-sent" = "You sent";
+"title-did-you-receive" = "Dis you receive";
+"message-validation-enter-amount" = "You must enter an amount greater than 0 to make a transaction";
+"title-button-accept" = "Accept";
+"message-register-transaction" = "Transaction registered successfully";
